@@ -21,13 +21,21 @@ var ruleTester = new RuleTester();
 ruleTester.run("no-deprecated-episerver-apis", rule, {
 
     valid: [
+        // Dependencies that aren't ours.
         "define(function() {});",
         "define([a], function(a) { });",
         "define(['a'], function() {});",
         "define('id', ['a'], function() {});",
 
+        // Case insensitive
         "define(['epi/shell/TypeDescriptorManager'],function (TypeDescriptorManager) { return {}; });",
-        "define(['epi/shell/typedescriptormanager'],function (TypeDescriptorManager) { return {}; });"
+        "define(['epi/shell/typedescriptormanager'],function (TypeDescriptorManager) { return {}; });",
+
+        // Resources loaded by us (actual resource can be ours and others, doesn't matter right now)
+        "define(['epi/i18n!epi/shell/ui/nls/episerver.cms.compare'],function (resources) { return {}; });",
+        "define(['epi/i18n!epi/cms/nls/commerce.contentediting.editors.variantcollectioneditor'],function (resources) { return {}; });",
+        // Resources loaded by dojo or something else
+        "define(['dojo/has!host-browser?doh/_browserRunner'],function () { return {}; });",
     ],
 
     invalid: [
@@ -44,7 +52,6 @@ ruleTester.run("no-deprecated-episerver-apis", rule, {
                 message: "'epi-cms/widget/_dndstatemixin' is a deprecated Episerver module and will be removed in a future major version.",
                 type: "Literal"
             }]
-        }
-
+        },
     ]
 });
