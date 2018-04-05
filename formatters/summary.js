@@ -25,7 +25,7 @@ module.exports = function (lintResults) {
     let episerverCmsViolations = {};
     violations.forEach(violation => {
         violation.messages
-            .filter(message => isEpiRule(message.ruleId))
+            .filter(message => message.ruleId && isEpiRule(message.ruleId))
             .forEach(message => {
                 const rule = ruleName(message.ruleId);
                 const module = moduleNameFromMessage(message.message);
