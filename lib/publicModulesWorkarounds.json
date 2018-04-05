@@ -1,0 +1,8 @@
+[
+    "epi/epi",
+    "epi-cms/plugin-area/assets-pane",
+    "epi-cms/plugin-area/edit-notifications",
+    "epi-cms/plugin-area/navigation-tree",
+    "epi/Url",
+    "epi/shell/dgrid/Formatter"
+]

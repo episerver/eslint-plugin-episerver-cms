@@ -42,6 +42,14 @@ ruleTester.run("no-internal-episerver-apis", rule, {
 
         // Commerce modules (Has the "epi" prefix, but not completely)
         "define(['epi-ecf-ui/widget/viewmodel/FacetGroupViewModel'],function (FacetGroupViewModel) { return {}; });",
+
+        // Workarounds because of broken documentation (There are six classes that should be marked as public but aren't picked up by dojo doc, so they reside in publicModulesWorkarounds.json for now)
+        "define(['epi/epi'],function (epi) { return {}; });",
+        "define(['epi-cms/plugin-area/assets-pane'],function (assetsPane) { return {}; });",
+        "define(['epi-cms/plugin-area/edit-notifications'],function (editNotifications) { return {}; });",
+        "define(['epi-cms/plugin-area/navigation-tree'],function (navigationTree) { return {}; });",
+        "define(['epi/Url'],function (url) { return {}; });",
+        "define(['epi/shell/dgrid/Formatter'],function (formatter) { return {}; });",
     ],
 
     invalid: [
