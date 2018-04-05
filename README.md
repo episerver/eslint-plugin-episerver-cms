@@ -1,6 +1,6 @@
 # eslint-plugin-episerver-cms
 
-Makes sure only public Episerver CMS API&#39;s are used.
+Makes sure only public Episerver CMS API's are used.
 
 ## Installation
 
@@ -25,7 +25,7 @@ Add `eslint-epi-cms-api` to the plugins section of your `.eslintrc` configuratio
 ```json
 {
     "plugins": [
-        "eslint-epi-cms-api"
+        "episerver-cms"
     ]
 }
 ```
@@ -36,7 +36,8 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "eslint-epi-cms-api/rule-name": 2
+        "episerver-cms/no-internal-episerver-apis": "error",
+        "episerver-cms/no-deprecated-episerver-apis": "warn"
     }
 }
 ```

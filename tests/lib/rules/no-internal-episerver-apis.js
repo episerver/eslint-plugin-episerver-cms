@@ -1,5 +1,5 @@
 /**
- * @fileoverview Prohibits the use of internal Episerver API&#39;s.
+ * @fileoverview Prohibits the use of internal Episerver API's.
  * @author John-Philip Johansson
  */
 "use strict";

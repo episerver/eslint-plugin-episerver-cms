@@ -1,4 +1,4 @@
-# Prohibits the use of internal Episerver API&#39;s. (no-internal-episerver-apis)
+# Prohibits the use of internal Episerver API's. (no-internal-episerver-apis)
 
 Please describe the origin of the rule here.
 

@@ -1,4 +1,4 @@
-# Prohibits the use of deprecated Episerver API&#39;s. (no-deprecated-episerver-apis)
+# Prohibits the use of deprecated Episerver API's. (no-deprecated-episerver-apis)
 
 Please describe the origin of the rule here.
 
