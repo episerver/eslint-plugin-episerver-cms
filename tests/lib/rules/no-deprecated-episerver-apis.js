@@ -48,14 +48,16 @@ ruleTester.run("no-deprecated-episerver-apis", rule, {
         {
             code: "define(['epi-cms/widget/_DndStateMixin'],function (_DndStateMixin) { return {}; });",
             errors: [{
-                message: "'epi-cms/widget/_DndStateMixin' is a deprecated Episerver module and will be removed in a future major version.",
+                messageId: "deprecatedModule",
+                data: { moduleName: "epi-cms/widget/_DndStateMixin" },
                 type: "Literal"
             }]
         },
         {
             code: "define(['epi-cms/widget/_dndstatemixin'],function (_DndStateMixin) { return {}; });",
             errors: [{
-                message: "'epi-cms/widget/_dndstatemixin' is a deprecated Episerver module and will be removed in a future major version.",
+                messageId: "deprecatedModule",
+                data: { moduleName: "epi-cms/widget/_dndstatemixin" },
                 type: "Literal"
             }]
         },

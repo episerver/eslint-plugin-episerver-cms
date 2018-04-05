@@ -56,21 +56,24 @@ ruleTester.run("no-internal-episerver-apis", rule, {
         {
             code: "define(['epi/shell/widget/_ModelBindingMixin'],function (_ModelBindingMixin) { return {}; });",
             errors: [{
-                message: "'epi/shell/widget/_ModelBindingMixin' is an internal Episerver module and can have a breaking change in any release.",
+                messageId: "internalModule",
+                data: { moduleName: "epi/shell/widget/_ModelBindingMixin" },
                 type: "Literal"
             }]
         },
         {
             code: "define(['epi/shell/widget/_modelbindingmixin'],function (_ModelBindingMixin) { return {}; });",
             errors: [{
-                message: "'epi/shell/widget/_modelbindingmixin' is an internal Episerver module and can have a breaking change in any release.",
+                messageId: "internalModule",
+                data: { moduleName: "epi/shell/widget/_modelbindingmixin" },
                 type: "Literal"
             }]
         },
         {
             code: "define(['epi/madeup!epi/something/or.other'],function (_DndStateMixin) { return {}; });",
             errors: [{
-                message: "'epi/madeup' is an internal Episerver module and can have a breaking change in any release.",
+                messageId: "internalModule",
+                data: { moduleName: "epi/madeup" },
                 type: "Literal"
             }]
         },
