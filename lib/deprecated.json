@@ -1,0 +1,17 @@
+[
+    "epi-cms/command/RenameFolder",
+    "epi-cms/contentediting/FloatingComponentHandler",
+    "epi-cms/contentediting/RichTextInlineEditorWrapper",
+    "epi-cms/contentediting/_FloatingComponentEditorWrapperMixin",
+    "epi-cms/contentediting/_HasFloatingComponent",
+    "epi-cms/store/CustomQueryEngine",
+    "epi-cms/widget/_DndStateMixin",
+    "epi/RequireModule",
+    "epi/shell/_StatefulGetterSetterMixin",
+    "epi/shell/widget/DropDownMenu",
+    "epi/shell/widget/_ActionConsumer",
+    "epi/shell/widget/_ActionConsumerWidget",
+    "epi/shell/widget/_ActionProvider",
+    "epi/shell/widget/_ActionProviderBase",
+    "epi/shell/widget/_ActionProviderWidget"
+]
