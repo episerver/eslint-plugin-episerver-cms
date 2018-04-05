@@ -1,0 +1,20 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text=auto
+
+## Common web text files
+*.css       text
+*.htm       text
+*.html      text
+*.js        text
+*.less      text
+*.md        text
+
+## Bash and Linux text files
+*.sh        text eol=lf
+
+## Common web binary files
+*.gif   binary
+*.ico   binary
+*.jpeg  binary
+*.jpg   binary
+*.png   binary
