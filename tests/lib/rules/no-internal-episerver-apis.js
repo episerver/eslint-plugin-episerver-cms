@@ -21,16 +21,28 @@ var ruleTester = new RuleTester();
 ruleTester.run("no-internal-episerver-apis", rule, {
 
     valid: [
+        "define(function() {});",
+        "define([a], function(a) { });",
+        "define(['a'], function() {});",
+        "define('id', ['a'], function() {});",
 
-        // give me some code that won't trigger a warning
+        "define(['epi/shell/TypeDescriptorManager'],function (TypeDescriptorManager) { return {}; });",
+        "define(['epi/shell/typedescriptormanager'],function (TypeDescriptorManager) { return {}; });"
     ],
 
     invalid: [
         {
-            code: "define([\"epi-cms/compare/command/CompareCommandProvider.js\"], function (CompareCommandProvider) {});",
+            code: "define(['epi/shell/widget/_ModelBindingMixin'],function (_ModelBindingMixin) { return {}; });",
             errors: [{
-                message: "Fill me in.",
-                type: "Me too"
+                message: "This is an internal Episerver module. Do not use it. Its behaviour can have a breaking change in any release.",
+                type: "Literal"
+            }]
+        },
+        {
+            code: "define(['epi/shell/widget/_modelbindingmixin'],function (_ModelBindingMixin) { return {}; });",
+            errors: [{
+                message: "This is an internal Episerver module. Do not use it. Its behaviour can have a breaking change in any release.",
+                type: "Literal"
             }]
         }
     ]
