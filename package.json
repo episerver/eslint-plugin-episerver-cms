@@ -1,7 +1,7 @@
 {
-  "name": "eslint-plugin-eslint-epi-cms-api",
+  "name": "eslint-plugin-episerver-cms",
   "version": "0.0.0",
-  "description": "Makes sure only public Episerver CMS API's are used.",
+  "description": "Helps you use the Episerver CMS API's correctly.",
   "keywords": [
     "eslint",
     "eslintplugin",

@@ -1,4 +1,4 @@
-# eslint-plugin-eslint-epi-cms-api
+# eslint-plugin-episerver-cms
 
 Makes sure only public Episerver CMS API&#39;s are used.
 
@@ -10,13 +10,13 @@ You'll first need to install [ESLint](http://eslint.org):
 $ npm i eslint --save-dev
 ```
 
-Next, install `eslint-plugin-eslint-epi-cms-api`:
+Next, install `eslint-plugin-episerver-cms`:
 
 ```
-$ npm install eslint-plugin-eslint-epi-cms-api --save-dev
+$ npm install eslint-plugin-episerver-cms --save-dev
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-eslint-epi-cms-api` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-episerver-cms` globally.
 
 ## Usage
 
