@@ -42,6 +42,31 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
+### Statistics
+
+You can also output a summary of used API's. This is valuable statistics to us in the CMS UI team, so please copy that or save it to a file and send it to us.
+
+```
+eslint . -f ./node_modules/eslint-plugin-episerver-cms/formatters/summary.js
+eslint . -f ./node_modules/eslint-plugin-episerver-cms/formatters/summary.js -o epi-module-usage.json
+```
+
+It will look something like this, where the number on the right is the number of times the module is referenced:
+
+```json
+{
+    "no-deprecated-episerver-apis": {
+        "epi-cms/store/CustomQueryEngine": 2,
+        "epi/shell/widget/_ActionProviderWidget": 1
+    },
+    "no-internal-episerver-apis": {
+        "epi/shell/widget/_ModelBindingMixin": 12,
+        "epi/shell/widget/_FocusableMixin": 11,
+        "epi-cms/contentediting/NotificationBar": 8
+    }
+}
+```
+
 ## Supported Rules
 
 * Fill in provided rules here
