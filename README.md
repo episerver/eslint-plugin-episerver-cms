@@ -58,7 +58,7 @@ Enable it in your `.eslintrc.json` with the `extends` option:
 }
 ```
 
-## Rules
+## Supported Rules
 
 * [no-internal-episerver-apis](docs/rules/no-internal-episerver-apis.md) - Ensure internal Episerver CMS API's are not used, as they can break on any update (including patches).
 * [no-deprecated-episerver-apis](no-deprecated-episerver-apis) - Ensure deprecated Episerver CMS API's are not used, as they can be removed in the next major release.
@@ -68,35 +68,82 @@ Enable it in your `.eslintrc.json` with the `extends` option:
 
 You can also output a summary of used API's. This is valuable statistics to us in the CMS UI team, so please copy that or save it to a file and send it to us.
 
+### Summary format
+
+Usage:
+
 ```
-# Output to console
 $ eslint . -f ./node_modules/eslint-plugin-episerver-cms/formatters/summary.js
-
-# Output to file
-$ eslint . -f ./node_modules/eslint-plugin-episerver-cms/formatters/summary.js -o epi-module-usage.json
 ```
 
-It will look something like this, where the number on the right is the number of times the module is referenced:
+Result:
 
 ```json
-{
-    "no-deprecated-episerver-apis": {
-        "epi-cms/store/CustomQueryEngine": 2,
-        "epi/shell/widget/_ActionProviderWidget": 1
+[
+    {
+        "rule": "no-deprecated-episerver-apis",
+        "violations": [
+            {
+                "module": "epi/shell/widget/_ActionProviderWidget",
+                "usages": 3
+            },
+            {
+                "module": "epi-cms/store/CustomQueryEngine",
+                "usages": 2
+            }
+        ]
     },
-    "no-internal-episerver-apis": {
-        "epi/shell/widget/_ModelBindingMixin": 12,
-        "epi/shell/widget/_FocusableMixin": 11,
-        "epi-cms/contentediting/NotificationBar": 8
+    {
+        "rule": "no-internal-episerver-apis",
+        "violations": [
+            {
+                "module": "epi-cms/contentediting/NotificationBar",
+                "usages": 8
+            },
+            {
+                "module": "epi/shell/widget/_ModelBindingMixin",
+                "usages": 8
+            },
+        ]
     }
-}
+]
 ```
 
-## Supported Rules
 
-* Fill in provided rules here
+### JSON format
+
+Usage:
+
+```
+# Output to console
+$ eslint . -f ./node_modules/eslint-plugin-episerver-cms/formatters/json.js
+
+# Output to file
+$ eslint . -f ./node_modules/eslint-plugin-episerver-cms/formatters/json.js -o epi-module-usage.json
+```
+
+Result:
+
+Looks the same as Summary format.
 
 
+### CSV format
 
+Usage:
 
+```
+# Output to console
+$ eslint . -f ./node_modules/eslint-plugin-episerver-cms/formatters/csv.js
 
+# Output to file
+$ eslint . -f ./node_modules/eslint-plugin-episerver-cms/formatters/csv.js -o epi-module-usage.csv
+```
+
+Result:
+
+```csv
+no-deprecated-episerver-apis,epi/shell/widget/_ActionProviderWidget,3
+no-deprecated-episerver-apis,epi-cms/store/CustomQueryEngine,2
+no-internal-episerver-apis,epi-cms/contentediting/NotificationBar,8
+no-internal-episerver-apis,epi/shell/widget/_ModelBindingMixin,8
+```
