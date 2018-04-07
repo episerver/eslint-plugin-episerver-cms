@@ -46,16 +46,25 @@ Then configure the rules you want to use under the rules section.
 }
 ```
 
-Or use the recommended settings:
+## Recommended config
+
+This plugin exports a [`recommended` config](lib/index.js) that enforces good practices.
+
+Enable it in your `.eslintrc.json` with the `extends` option:
+
 ```json
 {
 	"extends": "plugin:episerver-cms/recommended"
 }
 ```
 
+## Rules
+
+* [no-internal-episerver-apis](docs/rules/no-internal-episerver-apis.md) - Ensure internal Episerver CMS API's are not used, as they can break on any update (including patches).
+* [no-deprecated-episerver-apis](no-deprecated-episerver-apis) - Ensure deprecated Episerver CMS API's are not used, as they can be removed in the next major release.
 
 
-### Statistics
+## Formatters
 
 You can also output a summary of used API's. This is valuable statistics to us in the CMS UI team, so please copy that or save it to a file and send it to us.
 
