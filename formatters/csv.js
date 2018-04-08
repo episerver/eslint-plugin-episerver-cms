@@ -1,9 +1,11 @@
 const normalizer = require("./normalized");
 
 /* FORMAT:
+    Rule,Module name,Usage count
     no-deprecated-episerver-apis,epi/shell/widget/_ActionProviderWidget,3
     no-deprecated-episerver-apis,epi-cms/store/CustomQueryEngine,2
-    no-internal-episerver-apis,epi/shell/widget/dialog/_DialogContentMixin,5
+    no-internal-episerver-apis,epi-cms/contentediting/NotificationBar,8
+    no-internal-episerver-apis,epi/shell/widget/_ModelBindingMixin,8
 */
 
 module.exports = function (results) {

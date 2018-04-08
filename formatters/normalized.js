@@ -16,16 +16,12 @@ module.exports = function (results) {
             ]
         },
         {
-            "rule": "no-internal-episerver-apis",
-            "violations": [
+            rule: "no-internal-episerver-apis",
+            violations: [
                 {
-                    "module": "epi-cms/contentediting/NotificationBar",
-                    "usages": 8
-                },
-                {
-                    "module": "epi/shell/widget/_ModelBindingMixin",
-                    "usages": 8
-                },
+                    module: "epi/shell/widget/dialog/_DialogContentMixin":,
+                    usages: 5
+                }
             ]
         }
     ]

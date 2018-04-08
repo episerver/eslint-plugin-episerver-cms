@@ -1,5 +1,5 @@
-const jsonFormatter = require("./json");
+const defaultFormatter = require("./table");
 
 module.exports = function (results) {
-    return jsonFormatter(results);
+    return defaultFormatter(results);
 }
