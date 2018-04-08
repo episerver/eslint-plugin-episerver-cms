@@ -1,17 +1,17 @@
 module.exports = function (results) {
 
-/* FORMAT (A sorted array, with nested elements for rule violations that are sorted by usage and module):
+/* FORMAT (A sorted array, with nested elements for rule violations that are sorted by module name for minimal git diffs when commiting the csv or json results):
     [
         {
             rule: "no-deprecated-episerver-apis",
             violations: [
                 {
-                    module: "epi/shell/widget/_ActionProviderWidget",
-                    usages: 3
-                },
-                {
                     module: "epi-cms/store/CustomQueryEngine",
                     usages: 2
+                },
+                {
+                    module: "epi/shell/widget/_ActionProviderWidget",
+                    usages: 3
                 }
             ]
         },
@@ -77,7 +77,6 @@ module.exports = function (results) {
                 violations: Object
                     .keys(violations)
                     .sort() // First sort on module name, which are the keys
-                    .sort((a, b) => violations[b] - violations[a]) // Then sort on usage
                     .map(name => {
                         return {
                             module: name,

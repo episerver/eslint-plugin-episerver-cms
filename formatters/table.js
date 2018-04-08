@@ -33,13 +33,15 @@ module.exports = function (results) {
     const tableData = normalizer(results)
         .reduce((results, summary) => {
             return results.concat(
-                summary.violations.map(violation => {
-                    return {
-                        rule: rules.shortNames[summary.rule],
-                        module: violation.module,
-                        usages: violation.usages
-                    };
-                })
+                summary.violations
+                    .sort((vA, vB) => vB.usages - vA.usages) // Sort by usage
+                    .map(violation => {
+                        return {
+                            rule: rules.shortNames[summary.rule],
+                            module: violation.module,
+                            usages: violation.usages
+                        };
+                    })
             );
         }, []);
 

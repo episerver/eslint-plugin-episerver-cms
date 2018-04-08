@@ -28,7 +28,7 @@ $ eslint . -f ./node_modules/eslint-plugin-episerver-cms/formatters/table.js
 
 ## CSV format
 
-This is the preferred format if you want to send us your usage.
+This is the preferred format if you want to send us your usage. Outputed file can be commited to track progress in lowering usage of internal and deprecated API's.
 
 Usage:
 
@@ -52,6 +52,8 @@ no-internal-episerver-apis,epi/shell/widget/_ModelBindingMixin,8
 
 
 ## JSON format
+
+Outputed file can be commited to track progress in lowering usage of internal and deprecated API's.
 
 Usage:
 
@@ -89,7 +91,7 @@ Result:
             },
             {
                 "module": "epi/shell/widget/_ModelBindingMixin",
-                "usages": 8
+                "usages": 17
             },
         ]
     }
