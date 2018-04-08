@@ -1,5 +1,5 @@
-const chalk = require('chalk');
-const emoji = require('node-emoji');
+const chalk = require("chalk");
+const emoji = require("node-emoji");
 const normalizer = require("./normalized");
 const rules = require("../lib/resources").rules;
 

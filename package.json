@@ -10,7 +10,7 @@
   "author": "John-Philip Johansson",
   "main": "lib/index.js",
   "scripts": {
-    "test": "mocha tests --recursive"
+    "test": "eslint . && mocha tests --recursive"
   },
   "dependencies": {
     "chalk": "^2.3.2",
