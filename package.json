@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-episerver-cms",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "Helps you use the Episerver CMS API's correctly.",
   "keywords": [
     "eslint",
