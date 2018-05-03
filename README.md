@@ -22,15 +22,12 @@ $ npm i seriema/eslint-plugin-episerver-cms seriema/eslint-formatter-episerver-c
 $ yarn add seriema/eslint-plugin-episerver-cms seriema/eslint-formatter-episerver-cms -D
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-episerver-cms` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-episerver-cms` and `eslint-formatter-episerver-cms` globally.
 
 Running it globally:
 
 ```
-$ eslint C:/YourEpiserverProject/ --plugin "episerver-cms" --rule "episerver-cms/no-internal-episerver-apis: error" --rule "episerver-cms/no-deprecated-episerver-apis: warn" --ignore-pattern "node_modules"
-
-#special:
-$ eslint C:/YourEpiserverProject/ -o YourEpiserverProject.csv --plugin "episerver-cms" --rule "episerver-cms/no-internal-episerver-apis: error" --rule "episerver-cms/no-deprecated-episerver-apis: warn" --ignore-pattern "node_modules" -f C:/Users/YOURUSER/AppData/Roaming/npm/node_modules/eslint-plugin-episerver-cms/formatters/csv.js
+$ eslint C:/YourEpiserverProject/ --output-file YourEpiserverProject.json --plugin episerver-cms --format episerver-cms --rule "{ episerver-cms/no-internal-episerver-apis: error, episerver-cms/no-deprecated-episerver-apis: warn }" --ignore-pattern "node_modules" --ignore-pattern "dtk"
 ```
 
 ## Usage
