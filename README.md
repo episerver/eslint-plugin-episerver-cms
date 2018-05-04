@@ -2,11 +2,13 @@
 
 Makes sure only public non-deprecated Episerver CMS API's are used.
 
+> _If you work on multiple Episerver projects and want to help us improve our public API, [we could use your help](say-hello.md)._
+
 ![Screenshot of summary output](summary.png)
 
 ## Installation
 
-You'll first need to install [ESLint](http://eslint.org):
+First, install [ESLint](http://eslint.org):
 
 ```
 $ npm i eslint --save-dev
@@ -14,25 +16,19 @@ $ npm i eslint --save-dev
 $ yarn add eslint -D
 ```
 
-Next, install `eslint-plugin-episerver-cms` and [`eslint-formatter-episerver-cms`](https://github.com/seriema/eslint-formatter-episerver-cms/) from github as it's not ready for npm just yet:
+Next, install `eslint-plugin-episerver-cms` from github as it's not ready for npm just yet:
 
 ```
-$ npm i seriema/eslint-plugin-episerver-cms seriema/eslint-formatter-episerver-cms --save-dev
+$ npm i seriema/eslint-plugin-episerver-cms --save-dev
 # or
-$ yarn add seriema/eslint-plugin-episerver-cms seriema/eslint-formatter-episerver-cms -D
+$ yarn add seriema/eslint-plugin-episerver-cms -D
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-episerver-cms` and `eslint-formatter-episerver-cms` globally.
-
-Running it globally:
-
-```
-$ eslint C:/YourEpiserverProject/ --output-file YourEpiserverProject.json --plugin episerver-cms --format episerver-cms --rule "{ episerver-cms/no-internal-episerver-apis: error, episerver-cms/no-deprecated-episerver-apis: warn }" --ignore-pattern "node_modules" --ignore-pattern "dtk"
-```
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-episerver-cms` globally.
 
 ## Usage
 
-Add `eslint-epi-cms-api` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `eslint-plugin-episerver-cms` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
@@ -41,7 +37,6 @@ Add `eslint-epi-cms-api` to the plugins section of your `.eslintrc` configuratio
     ]
 }
 ```
-
 
 Then configure the rules you want to use under the rules section.
 
@@ -52,14 +47,6 @@ Then configure the rules you want to use under the rules section.
         "episerver-cms/no-deprecated-episerver-apis": "warn"
     }
 }
-```
-
-### Analyzing multiple projects
-
-Install globally (see instructions above), and then run this for any project:
-
-```
-$ eslint C:/YourEpiserverProject/ --output-file YourEpiserverProject.json --plugin episerver-cms --format episerver-cms --rule "{ episerver-cms/no-internal-episerver-apis: error, episerver-cms/no-deprecated-episerver-apis: warn }" --ignore-pattern "node_modules" --ignore-pattern "dtk"
 ```
 
 ## Recommended config
@@ -74,6 +61,14 @@ Enable it in your `.eslintrc.json` with the `extends` option:
 }
 ```
 
+## Analyzing multiple projects
+
+Install globally (see instructions above), and then run this for any project:
+
+```
+$ eslint C:/YourEpiserverProject/ --output-file YourEpiserverProject.json --plugin episerver-cms --format episerver-cms --rule "{ episerver-cms/no-internal-episerver-apis: error, episerver-cms/no-deprecated-episerver-apis: warn }" --ignore-pattern "node_modules" --ignore-pattern "dtk"
+```
+
 ## Supported Rules
 
 * [no-internal-episerver-apis](docs/rules/no-internal-episerver-apis.md) - Ensure internal Episerver CMS API's are not used, as they can break on any update (including patches).
@@ -82,9 +77,7 @@ Enable it in your `.eslintrc.json` with the `extends` option:
 
 ## Formatters
 
-There are several formatters you can use to get a clearer overview of what Episerver API's are being used but shouldn't be. If you want to send us some statistics to help us in the CMS UI team, please send us the CSV version. [See all formatters.](https://github.com/seriema/eslint-formatter-episerver-cms)
-
-The formatters need to be installed separately:
+There are several formatters you can use to get a clearer overview of what Episerver API's are being used but shouldn't be. They are installed seperately, with [eslint-formatter-episerver-cms](https://github.com/seriema/eslint-formatter-episerver-cms).
 
 ```
 $ npm i seriema/eslint-formatter-episerver-cms --save-dev
