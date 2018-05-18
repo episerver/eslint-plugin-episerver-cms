@@ -1,16 +1,26 @@
 {
   "name": "eslint-plugin-episerver-cms",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Helps you use the Episerver CMS API's correctly.",
+  "author": "John-Philip Johansson <jp.johansson@episerver.com>",
+  "license": "Apache-2.0",
   "keywords": [
     "eslint",
     "eslintplugin",
-    "eslint-plugin"
+    "eslint-plugin",
+    "episerver"
   ],
-  "author": "John-Philip Johansson",
+  "homepage": "https://github.com/seriema/eslint-plugin-episerver-cms",
+  "repository": {
+      "type": "git",
+      "url": "https://github.com/seriema/eslint-plugin-episerver-cms.git"
+  },
   "main": "lib/index.js",
   "scripts": {
     "test": "eslint . && mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "^1.2.0"
   },
   "devDependencies": {
     "eslint": "^3.9.0",
@@ -21,9 +31,5 @@
   },
   "engines": {
     "node": ">=6.0.0"
-  },
-  "license": "Apache-2.0",
-  "dependencies": {
-    "requireindex": "^1.2.0"
   }
 }
