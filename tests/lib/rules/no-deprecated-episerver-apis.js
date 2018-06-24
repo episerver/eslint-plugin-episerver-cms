@@ -9,9 +9,7 @@
 //------------------------------------------------------------------------------
 
 var rule = require("../../../lib/rules/no-deprecated-episerver-apis"),
-
     RuleTester = require("eslint").RuleTester;
-
 
 //------------------------------------------------------------------------------
 // Tests
@@ -19,7 +17,6 @@ var rule = require("../../../lib/rules/no-deprecated-episerver-apis"),
 
 var ruleTester = new RuleTester();
 ruleTester.run("no-deprecated-episerver-apis", rule, {
-
     valid: [
         // Dependencies that aren't ours.
         "define(function() {});",
@@ -46,18 +43,26 @@ ruleTester.run("no-deprecated-episerver-apis", rule, {
 
     invalid: [
         {
-            code: "define(['epi-cms/widget/_DndStateMixin'],function (_DndStateMixin) { return {}; });",
-            errors: [{
-                message: "'epi-cms/widget/_DndStateMixin' is a deprecated Episerver module and will be removed in a future major version.",
-                type: "Literal"
-            }]
+            code:
+                "define(['epi-cms/widget/_DndStateMixin'],function (_DndStateMixin) { return {}; });",
+            errors: [
+                {
+                    message:
+                        "'epi-cms/widget/_DndStateMixin' is a deprecated Episerver module and will be removed in a future major version.",
+                    type: "Literal",
+                },
+            ],
         },
         {
-            code: "define(['epi-cms/widget/_dndstatemixin'],function (_DndStateMixin) { return {}; });",
-            errors: [{
-                message: "'epi-cms/widget/_dndstatemixin' is a deprecated Episerver module and will be removed in a future major version.",
-                type: "Literal"
-            }]
+            code:
+                "define(['epi-cms/widget/_dndstatemixin'],function (_DndStateMixin) { return {}; });",
+            errors: [
+                {
+                    message:
+                        "'epi-cms/widget/_dndstatemixin' is a deprecated Episerver module and will be removed in a future major version.",
+                    type: "Literal",
+                },
+            ],
         },
-    ]
+    ],
 });
