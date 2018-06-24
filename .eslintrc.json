@@ -3,9 +3,11 @@
         "node": true,
         "es6": true
     },
+    "plugins": ["prettier"],
     "extends": "eslint:recommended",
     "rules": {
-        "quotes": ["error", "double"]
+        "quotes": ["error", "double"],
+        "prettier/prettier": "error"
     },
     "root": true
 }
