@@ -13,7 +13,7 @@ For part 2 we need your help. We need to know what non-public API's you are usin
 
 ## How you can help
 
-Install [ESLint](https://eslint.org), [eslint-plugin-episerver-cms](https://github.com/seriema/eslint-plugin-episerver-cms), and [eslint-formatter-episerver-cms](https://github.com/seriema/eslint-formatter-episerver-cms), then lint a project and send the output file to [jp.johansson@episerver.com](mailto:jp.johansson@episerver.com).
+Install [ESLint](https://eslint.org), [@episerver/eslint-plugin-cms](https://github.com/seriema/eslint-plugin-episerver-cms), and [@episerver/eslint-formatter-cms](https://github.com/seriema/eslint-formatter-episerver-cms), then lint a project and send the output file to [jp.johansson@episerver.com](mailto:jp.johansson@episerver.com).
 
 > Que?
 
@@ -22,13 +22,13 @@ If you don't have node installed, just install [yarn](https://yarnpkg.com/). If 
 **Step 1)** Install all the things globally:
 
 ```console
-yarn global add eslint seriema/eslint-plugin-episerver-cms seriema/eslint-formatter-episerver-cms
+yarn global add eslint @episerver/eslint-plugin-cms @episerver/eslint-formatter-cms
 ```
 
 **Step 2)** Run this in a top-level directory, per project. Just change "YOURPROJECT".
 
 ```console
-C:> eslint C:/YOURPROJECT/ --output-file YOURPROJECT.json --plugin episerver-cms --format episerver-cms --rule "{ episerver-cms/no-internal-episerver-apis: error, episerver-cms/no-deprecated-episerver-apis: warn }" --ignore-pattern "node_modules" --ignore-pattern "dtk"
+C:> eslint C:/YourEpiserverProject/ --output-file=YourEpiserverProject.json --plugin=episerver-cms --format=episerver-cms --ignore-pattern="node_modules" --ignore-pattern="dtk" --rule="{ \"@episerver/cms/no-internal-episerver-apis\": error, \"@episerver/cms/no-deprecated-episerver-apis\": warn }"
 ```
 
 **Step 3)** Send all those sweet JSON files to [jp.johansson@episerver.com](mailto:jp.johansson@episerver.com).

@@ -1,4 +1,4 @@
-# eslint-plugin-episerver-cms
+# @episerver/eslint-plugin-cms
 
 Makes sure only public non-deprecated Episerver CMS API's are used.
 
@@ -16,24 +16,24 @@ $ npm i eslint --save-dev
 $ yarn add eslint -D
 ```
 
-Next, install `eslint-plugin-episerver-cms`:
+Next, install `@episerver/eslint-plugin-cms`:
 
 ```shell
-$ npm i eslint-plugin-episerver-cms --save-dev
+$ npm i @episerver/eslint-plugin-cms --save-dev
 # or
-$ yarn add eslint-plugin-episerver-cms -D
+$ yarn add @episerver/eslint-plugin-cms -D
 ```
 
-**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `eslint-plugin-episerver-cms` globally.
+**Note:** If you installed ESLint globally (using the `-g` flag) then you must also install `@episerver/eslint-plugin-cms` globally.
 
 ## Usage
 
-Add `eslint-plugin-episerver-cms` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
+Add `@episerver/eslint-plugin-cms` to the plugins section of your `.eslintrc` configuration file. You can omit the `eslint-plugin-` prefix:
 
 ```json
 {
     "plugins": [
-        "episerver-cms"
+        "@episerver/cms"
     ]
 }
 ```
@@ -43,8 +43,8 @@ Then configure the rules you want to use under the rules section.
 ```json
 {
     "rules": {
-        "episerver-cms/no-internal-episerver-apis": "error",
-        "episerver-cms/no-deprecated-episerver-apis": "warn"
+        "@episerver/cms/no-internal-episerver-apis": "error",
+        "@episerver/cms/no-deprecated-episerver-apis": "warn"
     }
 }
 ```
@@ -57,7 +57,7 @@ Enable it in your `.eslintrc.json` with the `extends` option:
 
 ```json
 {
-    "extends": "plugin:episerver-cms/recommended"
+    "extends": "plugin:@episerver/cms/recommended"
 }
 ```
 
@@ -66,7 +66,7 @@ Enable it in your `.eslintrc.json` with the `extends` option:
 Install globally (see instructions above), and then run this for any project:
 
 ```shell
-$ eslint C:/YourEpiserverProject/ --output-file YourEpiserverProject.json --plugin episerver-cms --format episerver-cms --rule "{ episerver-cms/no-internal-episerver-apis: error, episerver-cms/no-deprecated-episerver-apis: warn }" --ignore-pattern "node_modules" --ignore-pattern "dtk"
+$ eslint C:/YourEpiserverProject/ --output-file=YourEpiserverProject.json --plugin=episerver-cms --format=episerver-cms --ignore-pattern="node_modules" --ignore-pattern="dtk" --rule="{ \"@episerver/cms/no-internal-episerver-apis\": error, \"@episerver/cms/no-deprecated-episerver-apis\": warn }"
 ```
 
 ## Supported Rules
@@ -77,12 +77,12 @@ $ eslint C:/YourEpiserverProject/ --output-file YourEpiserverProject.json --plug
 
 ## Formatters
 
-There are several formatters you can use to get a clearer overview of what Episerver API's are being used but shouldn't be. They are installed seperately, with [eslint-formatter-episerver-cms](https://github.com/seriema/eslint-formatter-episerver-cms).
+There are several formatters you can use to get a clearer overview of what Episerver API's are being used but shouldn't be. They are installed separately, with [@episerver/eslint-formatter-cms](https://github.com/seriema/eslint-formatter-episerver-cms).
 
 ```shell
-$ npm i seriema/eslint-formatter-episerver-cms --save-dev
+$ npm i @episerver/eslint-formatter-cms --save-dev
 # or
-$ yarn add seriema/eslint-formatter-episerver-cms -D
+$ yarn add @episerver/eslint-formatter-cms -D
 ```
 
 Then you can get a summary view with:

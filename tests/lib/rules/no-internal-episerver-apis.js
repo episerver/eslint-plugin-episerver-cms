@@ -54,16 +54,16 @@ ruleTester.run("no-internal-episerver-apis", rule, {
 
     invalid: [
         {
-            code: "define(['epi/shell/widget/_ModelBindingMixin'],function (_ModelBindingMixin) { return {}; });",
+            code: "define(['epi/shell/widget/dialog/ErrorDialog'],function (ErrorDialog) { return {}; });",
             errors: [{
-                message: "'epi/shell/widget/_ModelBindingMixin' is an internal Episerver module and can have a breaking change in any release.",
+                message: "'epi/shell/widget/dialog/ErrorDialog' is an internal Episerver module and can have a breaking change in any release.",
                 type: "Literal"
             }]
         },
         {
-            code: "define(['epi/shell/widget/_modelbindingmixin'],function (_ModelBindingMixin) { return {}; });",
+            code: "define(['epi/shell/widget/dialog/errordialog'],function (ErrorDialog) { return {}; });",
             errors: [{
-                message: "'epi/shell/widget/_modelbindingmixin' is an internal Episerver module and can have a breaking change in any release.",
+                message: "'epi/shell/widget/dialog/errordialog' is an internal Episerver module and can have a breaking change in any release.",
                 type: "Literal"
             }]
         },
