@@ -50,6 +50,12 @@ ruleTester.run("no-internal-episerver-apis", rule, {
         "define(['epi-cms/plugin-area/navigation-tree'],function (navigationTree) { return {}; });",
         "define(['epi/Url'],function (url) { return {}; });",
         "define(['epi/shell/dgrid/Formatter'],function (formatter) { return {}; });",
+
+        // options: "xproduct"
+        {
+            code: "define(['epi/shell/command/builder/MenuBuilder'],function (ErrorDialog) { return {}; });",
+            options: ["xproduct"],
+        }
     ],
 
     invalid: [
@@ -71,6 +77,17 @@ ruleTester.run("no-internal-episerver-apis", rule, {
             code: "define(['epi/madeup!epi/something/or.other'],function (_DndStateMixin) { return {}; });",
             errors: [{
                 message: "'epi/madeup' is an internal Episerver module and can have a breaking change in any release.",
+                type: "Literal"
+            }]
+        },
+
+        // options: "xproduct"
+        // Verify that the test case used in "valid" is invalid when the option is not set.
+        {
+            code: "define(['epi/shell/command/builder/MenuBuilder'],function (ErrorDialog) { return {}; });",
+            options: [], // Do not set "xproduct" to verify that this will fail.
+            errors: [{
+                message: "'epi/shell/command/builder/MenuBuilder' is an internal Episerver module and can have a breaking change in any release.",
                 type: "Literal"
             }]
         },
