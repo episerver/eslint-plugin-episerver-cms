@@ -1,4 +1,4 @@
-# Ensure deprecated Episerver CMS API's are not used. (episerver-cms/no-deprecated-episerver-apis)
+# Ensure deprecated Episerver CMS API's are not used. (@episerver/cms/no-deprecated-episerver-apis)
 
 Ensure deprecated Episerver CMS API's are not used, as they can be removed in the next major release.
 
@@ -8,10 +8,11 @@ Ensure deprecated Episerver CMS API's are not used, as they can be removed in th
 Examples of **incorrect** code for this rule:
 
 ```js
+/*eslint @episerver/cms/no-deprecated-episerver-apis: ["error"]*/
 define([
     "epi/shell/TypeDescriptorManager",
     "epi-cms/command/RenameFolder" // This is a deprecated module
-],function (
+], function (
     TypeDescriptorManager,
     RenameFolder
 ) {
@@ -22,10 +23,11 @@ define([
 Examples of **correct** code for this rule:
 
 ```js
+/*eslint @episerver/cms/no-deprecated-episerver-apis: ["error"]*/
 define([
     "epi/shell/TypeDescriptorManager",
     "epi-cms/asset/command/RenameSelectedFolder" // Ok (public and not deprecated)
-],function (
+], function (
     TypeDescriptorManager,
     RenameFolder
 ) {
@@ -35,7 +37,7 @@ define([
 
 ## When Not To Use It
 
-When you don't plan on upgrading Episerver CMS, or when you are willing to use deprecated API's and just deal with their potential disappearence when upgrading to a new major version.
+When you don't plan on upgrading Episerver CMS, or when you are willing to use deprecated API's and just deal with their potential disappearance when upgrading to a new major version.
 
 ## Further Reading
 
