@@ -1,4 +1,4 @@
-# Ensure internal Episerver CMS API's are not used. (episerver-cms/no-internal-episerver-apis)
+# Ensure internal Episerver CMS API's are not used. (@episerver/cms/no-internal-episerver-apis)
 
 Ensure internal Episerver CMS API's are not used, as they can break on any update (including patches). Only public API's follow semantic versioning.
 
