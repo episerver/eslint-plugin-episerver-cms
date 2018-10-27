@@ -1,3 +1,6 @@
+[![NPM version](https://img.shields.io/npm/v/@episerver/eslint-plugin-cms.svg?style=flat-square)](https://www.npmjs.com/package/@episerver/eslint-plugin-cms)
+[![Build status](https://circleci.com/gh/seriema/eslint-plugin-episerver-cms.svg?style=svg)](https://circleci.com/gh/seriema/eslint-plugin-episerver-cms)
+
 # @episerver/eslint-plugin-cms
 
 Makes sure only public non-deprecated Episerver CMS API's are used.
