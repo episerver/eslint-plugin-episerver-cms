@@ -1,6 +1,6 @@
 {
   "name": "@episerver/eslint-plugin-cms",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Helps you use the Episerver CMS API's correctly.",
   "author": "John-Philip Johansson <jp.johansson@episerver.com>",
   "license": "Apache-2.0",
